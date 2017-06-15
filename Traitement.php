@@ -13,6 +13,7 @@ try
 
 $email = $_POST['email'];
 $mdp = $_POST['mdp'];
+$_SESSION['login']= "";
 
 
 class Inscrit
@@ -57,7 +58,6 @@ class Inscrit
     }
     $requete->closeCursor();
   }
-
     public function email()
   {
   	return $this->_email;
@@ -77,4 +77,57 @@ $Inscrit->setEmail($email);
 $Inscrit->setMdp($mdp);
 $Inscrit->setlogin($bdd);
 $Inscrit->login();
+
+
+class Json
+{
+  private $_json;
+
+  public function RecupJson($url){
+
+try
+  {
+    $bdd=new PDO('mysql:host=localhost;dbname=aolys_recrutement','root','');
+  }
+  catch(Exception $e)
+  {
+    die('<strong>Erreur détectée !!! </strong>' . $e->getMessage());
+  }
+
+
+    $json = file_get_contents($url,0,null,null); 
+    $tmp = json_decode($json, true);
+
+   $requete=$bdd->prepare('INSERT INTO inscrit /*(id, mail_inscrit, mdp_inscrit )*/ VALUES (:id,:mail_inscrit,:mdp_inscrit )')or die (print_r($bdd->errorInfo()));//null auto génère
+    $requete->execute(/*array(
+                              'id'=>$tmp['id'],
+                              'mail_inscrit'=>$tmp['mail_inscrit'],
+                              'mdp_inscrit'=>$tmp['mdp_inscrit']
+                            )*/$tmp);
+  
+    }//$a = array ('a' => 'apple', 'b' => 'banana', 'c' => array ('x', 'y', 'z'));
+//print_r ($a);
+
+  public function EnvoiJson($bdd){
+
+    $requete=$bdd->prepare('SELECT * FROM inscrit/*users WHERE mail_inscrit=? AND mdp_inscrit=?*/') or die (print_r($bdd->errorInfo()));
+    $requete->execute(/*array($_POST['email'],$_POST['mdp'])*/);
+    
+    // fetch the results into an array
+    $result = $requete->fetchAll( PDO/*bdd*/::FETCH_ASSOC );
+    // convert to json
+    $json = json_encode( $result );
+
+    // echo the json string
+    echo $json;
+
+    $requete->closeCursor();
+
+  }
+}
+
+$JsonFile = new Json;
+$JsonFile->EnvoiJson($bdd);
+$JsonFile->RecupJson("data.json");
 ?>
+
