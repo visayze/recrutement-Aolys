@@ -3,15 +3,18 @@ import { NgModule }      from '@angular/core';
 import { FormsModule }   from '@angular/forms';
 import { HttpModule }    from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
+/*
 // Imports for loading & configuring the in-memory web api
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './in-memory-data.service';
+*/
 
 import { AppComponent }       from './app.component';
 import { IndexComponent }     from './index/index.component';
 import { HeaderComponent }    from './header/header.component';
 import { FooterComponent }    from './footer/footer.component';
 import { InscriptionComponent } from './inscription/inscription.component';
+import { ConnectionComponent }from './connection/connection.component';
 import { ListeInscritsComponent } from './listeInscrits/listeInscrits.component';
 
 import { InscritService }from './inscrit.service';
@@ -30,6 +33,10 @@ const mesRoutes: Routes = [
         path: 'inscription',
         component: InscriptionComponent
     
+    },
+    {
+        path: 'connection',
+        component: ConnectionComponent 
     }
 ];
 
@@ -43,13 +50,14 @@ const mesRoutes: Routes = [
     FooterComponent,
     ListeInscritsComponent,
     InscriptionComponent,
+    ConnectionComponent,
   ],
   imports: [                    
     BrowserModule,
     FormsModule,
     HttpModule,
     RouterModule.forRoot(mesRoutes),
-    InMemoryWebApiModule.forRoot(InMemoryDataService),
+    /*InMemoryWebApiModule.forRoot(InMemoryDataService),*/
   ],
   providers: [ InscritService ],
   bootstrap: [AppComponent]

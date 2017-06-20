@@ -1,10 +1,14 @@
-/*Header*/
-header {
+#header {
 height: auto;
 position: relative;
 z-index: 10;
+}
+
+header {
 display:block;
 }
+
+
 
 #header-top-bar{
 background-color:rgba(51,51,51,1);
@@ -15,11 +19,45 @@ z-index:3;
 height: 45px;
 }
 
-#header-inner-wrap {
-background-color: rgba(255,255,255,1);
+#header-top-bar, #header-bottom-bar{
+line-height: 25px;
 }
 
-/* all */
+.search-box-wrapper.style2-header-search-widget {
+position: fixed;
+top: 0px;
+left: 0px;
+width: 100%;
+height: 100%;
+box-sizing: border-box;
+}
+
+.search-box-wrapper.style2-header-search-widget .header-search-form-close {
+position: absolute;
+top: 30px;
+right: 30px;
+font-size: 35px;
+cursor: pointer;
+color: inherit;
+display: block;
+z-index: 4;
+}
+
+.search-box-wrapper .icon-icon_close {
+color: #232323;
+}
+
+.search-box-wrapper {
+background-color: rgba(38,41,42,1.00);
+display: none;
+right: 0px;
+z-index:12;
+-webkit-box-shadow: 0px 1px 3px rgba(0,0,0,0.23);
+line-height:normal;
+padding: 30px;
+background: #fff;
+overflow-y: hidden;
+}
 
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
 margin:0;
@@ -31,15 +69,21 @@ vertical-align:baseline;
 background:transparent;
 }
 
-/*body*/
 body{
 font: 400 16px "Fira Sans","Open Sans","Arial",sans-serif;
 color: #565656;
+line-height: 24px;
+letter-spacing: 0px;
+text-transform: none;
 -webkit-font-smoothing: antialiased;
 background:#ffffff url(https://www.aolys.fr/wp-content/uploads/2017/05/main_bg_dark.jpg) center center;
 }
 
-/* clearfix */
+::selection{
+background: rgb(0,0,0);
+color:#fff;
+}
+
 .clearfix {
 }
 
@@ -52,28 +96,24 @@ background:#ffffff url(https://www.aolys.fr/wp-content/uploads/2017/05/main_bg_d
 clear: both;
 }
 
-/* background */
+body #main {
+transition: right 400ms ease;
+position: relative;
+right: 0px;
+}
+
+@media only screen and (max-width: 1279px) and (min-midth: 960px ).layout-box{
+width: 100%;
+}
+
 .layout-box {
 position: relative;
 width: 1280px;
 margin: 0px auto;
 }
 
-/* Menu */
-#menu-item-3110 a:hover{
-color:#a2c516;
-}
-#menu-item-3174 a:hover{
-color:#009dd0;
-}
-#menu-item-3169 a:hover{
-color:#e50050;
-}
-#menu-item-3173 a:hover{
-color:#f9b000;
-}
-#menu-item-3183 a:hover{
-color:#a28e72;
+.layout-box #header-inner-wrap, #header-inner-wrap, body.header-trasparent #header #header-inner-wrap.no-transparent, .left-header .sb-slidebar.sb-left {
+background-color: rgba(255,255,255,1);
 }
 
 #navigation, .style2 #navigation, #navigation-left-side, #navigation-right-side, .header-cart-controls .cart-contents, .sb-left  #slidebar-menu, #header-controls-right, #header-controls-left, body #header-inner-wrap.top-animate.style2 #navigation, .top-overlay-menu .sb-right  #slidebar-menu{
@@ -242,6 +282,8 @@ h6	{
     position: relative;
     z-index: 2;
 }
+.clearfix {
+}
 
 footer#footer.layout-box{
     color: #fff;
@@ -297,12 +339,28 @@ color:white;
 .top-bar-widgets{
 margin-right:15px;
 }
+
+#menu-item-3110 a:hover{
+color:#a2c516;
+}
+#menu-item-3174 a:hover{
+color:#009dd0;
+}
+#menu-item-3169 a:hover{
+color:#e50050;
+}
+#menu-item-3173 a:hover{
+color:#f9b000;
+}
+#menu-item-3183 a:hover{
+color:#a28e72;
+}
 footer#bottom-widgets {
 border-bottom: 1px solid white;
 }
 
 
-/*carousel
+/*carousel*/
 .rslides {
   position: relative;
   list-style: none;
@@ -333,9 +391,8 @@ border-bottom: 1px solid white;
   float: left;
   width: 100%;
   border: 0;
-  }*/
+  }
 
-/*Bouton connexion*/
 #header-top-bar-right a {
 	float:right;
     padding: 10px 20px;
@@ -344,4 +401,32 @@ color: white;
 }
 #header-top-bar-right a:hover {
 color:#e50050;
+}
+
+/*CSS Page Connexion*/
+form label, .main-connexion h1{
+display:block;
+text-align: center;
+	margin: 0 auto 0 auto;
+padding-bottom:10px;
+}
+form input{
+display:block;
+margin: 0 auto 0 auto;
+margin-bottom:15px;
+}
+
+.connexion {
+padding: 15;
+margin-top: 25px;
+border-radius: 25px;
+}
+.connexion:hover {
+background-color:grey;
+}
+.main-connexion{
+background-color:white;
+border-top: 10px #e50050 solid;
+padding-bottom: 25px;
+padding-top: 25px;
 }

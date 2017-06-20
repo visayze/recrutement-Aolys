@@ -12,7 +12,7 @@ import { Inscrit } from './classe/Inscrit';
 @Injectable()
 export class InscritService {
 /********** Proprietes **********/
-    private inscritUrl = 'api/inscrits';  // URL to web api
+    private inscritUrl = '..../Inscrit.php';  // URL to web api
 
     /********** Constructeur **********/
     constructor(private http: Http) { }
@@ -38,6 +38,14 @@ export class InscritService {
                         .map(this.extractData)
                         .catch(this.handleError);
       }
+
+/*
+    verif(): Observable<any>{
+        return this.http.post()
+                        .map(this.extractData)
+                        .catch(this.handleError);    
+    }
+*/
 
     private extractData(res: Response) {
         let body = res.json();
