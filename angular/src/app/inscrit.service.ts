@@ -25,13 +25,6 @@ export class InscritService {
         .catch(this.handleError);
     }
 
-/*    create(data: Inscrit): Observable<Inscrit> {
-    console.log(data);
-    return this.http.post(this.inscritUrl, { data })
-                    .map(this.extractData)
-                    .catch(this.handleError);
-  }*/
-
     create(data: Inscrit): Observable<Inscrit> {
         /*console.log(data);*/
         return this.http.post(this.inscritUrl, data)
@@ -39,13 +32,13 @@ export class InscritService {
                         .catch(this.handleError);
       }
 
-/*
-    verif(): Observable<any>{
-        return this.http.post()
+
+    verif(mail:string,mdp:string): Observable<any>{
+        return this.http.post(this.inscritUrl, {mail,mdp})
                         .map(this.extractData)
                         .catch(this.handleError);    
     }
-*/
+
 
     private extractData(res: Response) {
         let body = res.json();

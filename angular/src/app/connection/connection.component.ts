@@ -14,15 +14,17 @@ export class ConnectionComponent {
 /********** Proprietes **********/
     mail="";
     mdp="";
+    test: string[] = [];
     msgErreur="";
 /********** Constructeur **********/ 
 	constructor(private inscritService: InscritService){}
 /********** Méthodes **********/
     valider(){
-/*        this.inscritService.verif()
+        this.test = [this.mail,this.mdp]
+        this.inscritService.verif(this.mail,this.mdp)
                 .subscribe(
-                truc  => this..push(truc),
-                error =>  this.msgErreur = <any>error);*/
+                truc  => this.test.push(truc),
+                error =>  this.msgErreur = <any>error);
     }
     
 }
