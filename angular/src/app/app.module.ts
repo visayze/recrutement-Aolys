@@ -21,6 +21,9 @@ import { InscritService }from './inscrit.service';
 
 ///////////////////////////////// routes /////////////////////////////////
 const mesRoutes: Routes = [
+    {    path: '',
+        component: IndexComponent 
+    },  
     {
         path: 'liste-utilisateurs', 
         component: ListeInscritsComponent
@@ -37,7 +40,7 @@ const mesRoutes: Routes = [
     {
         path: 'connection',
         component: ConnectionComponent 
-    }
+    }, 
 ];
 
 
