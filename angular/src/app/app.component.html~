@@ -1,0 +1,15 @@
+<div>
+  {{titre}}
+</div>
+
+<input [(ngModel)]="inscrit.name" placeholder="name"/>
+<br/>
+
+<input type="text" placeholder="prenom" prenom [value]="prenom"/>
+<br/>
+
+<button (click)="valider()">Valider</button>
+
+<button (click)="incrementerValeur()">Mon bouton</button>
+<button (click)="resetValeur()">Mon bouton</button>
+<div>{{valeur}}</div>
