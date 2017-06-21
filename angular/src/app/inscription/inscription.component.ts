@@ -1,12 +1,11 @@
 import { Component }            from '@angular/core';
 import { Inscrit }              from '../classe/Inscrit';
 import { InscritService }       from '../inscrit.service';
-
 	
 @Component({
   selector: 'inscription-form',
   templateUrl: './inscription.component.html',
-  /*styleUrls: ['../site.css'],*/
+  styleUrls: ['./inscription.css'],
 })
 
 export class InscriptionComponent {
@@ -15,11 +14,13 @@ export class InscriptionComponent {
     mobilite="";
     cmdp = "";
     titre='Inscrition';
-    inscrit = new Inscrit('','','','','','',null,null,'');
+    inscrit = new Inscrit('','','','','',null,null,null,'');
     inscrits: Inscrit[]=[];
     msgErreur = '';
+
 /********** Constructeur **********/    
 	constructor(private inscritService: InscritService){}
+
 /********** Méthodes **********/
     valider(){
         if (this.cmdp == this.inscrit.mdp){

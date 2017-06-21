@@ -21,48 +21,52 @@ import { InscritService }from './inscrit.service';
 
 ///////////////////////////////// routes /////////////////////////////////
 const mesRoutes: Routes = [
-    {    path: '',
-        component: IndexComponent 
-    },  
+    
     {
         path: 'liste-utilisateurs', 
         component: ListeInscritsComponent
     },
     {
-        path:'index',
-        component: IndexComponent
-    },
-    {
         path: 'inscription',
         component: InscriptionComponent
-    
     },
     {
         path: 'connection',
         component: ConnectionComponent 
     }, 
+    {
+        path:'index',
+        component: IndexComponent
+    },
+    {    path: '',
+        component: IndexComponent 
+    },              
+    {    path: '**',
+        component: IndexComponent 
+    },          
+    
 ];
 
 
 ///////////////////////////////// module /////////////////////////////////
 @NgModule({
-  declarations: [
-    AppComponent,
-    IndexComponent,
-    HeaderComponent,
-    FooterComponent,
-    ListeInscritsComponent,
-    InscriptionComponent,
-    ConnectionComponent,
-  ],
-  imports: [                    
-    BrowserModule,
-    FormsModule,
-    HttpModule,
-    RouterModule.forRoot(mesRoutes),
-    /*InMemoryWebApiModule.forRoot(InMemoryDataService),*/
-  ],
-  providers: [ InscritService ],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        IndexComponent,
+        HeaderComponent,
+        FooterComponent,
+        ListeInscritsComponent,
+        InscriptionComponent,
+        ConnectionComponent,
+    ],
+    imports: [                    
+        BrowserModule,
+        FormsModule,
+        HttpModule,
+        RouterModule.forRoot(mesRoutes),
+        /*InMemoryWebApiModule.forRoot(InMemoryDataService),*/
+    ],
+    providers: [ InscritService ],
+    bootstrap: [ AppComponent ]
 })
 export class AppModule { }

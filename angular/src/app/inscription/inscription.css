@@ -1,0 +1,20 @@
+label{
+    display:inline-block;
+    width:250px;
+}
+
+#colonneGauche, #colonneDroite{
+    display:inline-block;
+    width:600px;
+    margin:10px;
+    vertical-align:top;
+}
+
+#zoneBoutons{
+    text-align:right;    
+}
+
+input[required].ng-invalid{
+    border-left: solid 5px red;
+    
+}
