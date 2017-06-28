@@ -1,8 +1,8 @@
-import { Component }    from '@angular/core';
-import { Inscrit }              from '../classe/Inscrit';
-import { InscritService }       from '../inscrit.service';
+import { Component } from '@angular/core';
+import { Inscrit } from '../classe/Inscrit';
+import { InscritService } from '../inscrit.service';
 
-	
+
 @Component({
   selector: 'header-site',
   templateUrl: './header.component.html',
@@ -10,11 +10,11 @@ import { InscritService }       from '../inscrit.service';
 })
 
 export class HeaderComponent {
-	
+
 /********** Proprietes **********/
-    
-/********** Constructeur **********/    
-	
+
+/********** Constructeur **********/
+
 /********** Méthodes **********/
 
 }
