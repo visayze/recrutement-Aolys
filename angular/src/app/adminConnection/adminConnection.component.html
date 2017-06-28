@@ -1,6 +1,5 @@
 <form #formulaire="ngForm">
-	<input required type="email" name="mail" [(ngModel)]="mail" placeholder="mail"><br>
+	<input required type="email" name="mail" [(ngModel)]="mail" placeholder="mail" required><br>
 	<input required type="password" name="mdp" [(ngModel)]="mdp" placeholder="mot de passe " ><br>
         <button [disabled]="!formulaire.form.valid" type='submit' (click)="valider()">Valider</button>
 </form>
-<a routerLink="/inscription" routerLinkActive="active">Inscription</a> 

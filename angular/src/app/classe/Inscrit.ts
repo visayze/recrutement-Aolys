@@ -13,6 +13,5 @@ export class Inscrit {
         public mail_parrain?: string,
         public tel?: string,
         public tel_portable?: string,
-        public id?: number ) 
-    { }
+        public id?: number ) {}
 };

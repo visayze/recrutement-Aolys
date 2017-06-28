@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule }      from '@angular/core';
-import { FormsModule }   from '@angular/forms';
-import { HttpModule }    from '@angular/http';
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 /*
 // Imports for loading & configuring the in-memory web api
@@ -9,13 +9,15 @@ import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './in-memory-data.service';
 */
 
-import { AppComponent }       from './app.component';
-import { IndexComponent }     from './index/index.component';
-import { HeaderComponent }    from './header/header.component';
-import { FooterComponent }    from './footer/footer.component';
+import { AppComponent } from './app.component';
+import { IndexComponent } from './index/index.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 import { InscriptionComponent } from './inscription/inscription.component';
-import { ConnectionComponent }from './connection/connection.component';
+import { ConnectionComponent } from './connection/connection.component';
 import { ListeInscritsComponent } from './listeInscrits/listeInscrits.component';
+import { AdminConnectionComponent } from './adminConnection/adminConnection.component';
+import { ListeEmplois } from './listeEmplois/listeEmplois.component';
 
 import { InscritService }from './inscrit.service';
 
@@ -35,13 +37,23 @@ const mesRoutes: Routes = [
         component: ConnectionComponent 
     }, 
     {
+        path: 'listeEmplois',
+        component: ListeEmplois
+    },
+    {
         path:'index',
         component: IndexComponent
     },
-    {    path: '',
+    {
+        path:'admin',
+        component: AdminConnectionComponent
+    },
+    {    
+        path: '',
         component: IndexComponent 
     },              
-    {    path: '**',
+    {   
+        path: '**',
         component: IndexComponent 
     },          
     
@@ -58,6 +70,8 @@ const mesRoutes: Routes = [
         ListeInscritsComponent,
         InscriptionComponent,
         ConnectionComponent,
+        AdminConnectionComponent,
+        ListeEmplois,
     ],
     imports: [                    
         BrowserModule,

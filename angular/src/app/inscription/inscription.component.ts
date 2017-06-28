@@ -1,7 +1,7 @@
-import { Component }            from '@angular/core';
-import { Inscrit }              from '../classe/Inscrit';
-import { InscritService }       from '../inscrit.service';
-	
+import { Component } from '@angular/core';
+import { Inscrit } from '../classe/Inscrit';
+import { InscritService } from '../inscrit.service';
+
 @Component({
   selector: 'inscription-form',
   templateUrl: './inscription.component.html',
@@ -9,21 +9,21 @@ import { InscritService }       from '../inscrit.service';
 })
 
 export class InscriptionComponent {
-	
+
 /********** Proprietes **********/
-    mobilite="";
-    cmdp = "";
-    titre='Inscrition';
-    inscrit = new Inscrit('','','','','',null,null,null,'');
-    inscrits: Inscrit[]=[];
+    mobilite= '';
+    cmdp= '';
+    titre= 'Inscrition';
+    inscrit= new Inscrit('','','','','',null,null,null,'');
+    inscrits: Inscrit[]= [];
     msgErreur = '';
 
-/********** Constructeur **********/    
-	constructor(private inscritService: InscritService){}
+/********** Constructeur **********/
+	constructor ( private inscritService: InscritService ) { }
 
 /********** Méthodes **********/
-    valider(){
-        if (this.cmdp == this.inscrit.mdp){
+    valider() {
+        if (this.cmdp == this.inscrit.mdp) {
             if (this.mobilite=="oui")
                 this.inscrit.mobilite = true;
             else
@@ -33,17 +33,16 @@ export class InscriptionComponent {
                 .subscribe(
                 truc  => this.inscrits.push(truc),
                 error =>  this.msgErreur = <any>error);
+        } else {
+            this.msgErreur = 'Les deux mots de passes ne correspondent pas';
         }
-        else{
-            this.msgErreur = "Les deux mots de passes ne correspondent pas";
-        }
-	}
+}
 
-	get(){
+	get() {
         this.inscritService.getInscrits()
             .subscribe(
                 requestOk => {this.inscrits = requestOk;
-                    console.log("this"+JSON.stringify(this.inscrits))
+                    console.log('this'+JSON.stringify(this.inscrits))
                     },
                 error => this.msgErreur = error
                 )

@@ -1,101 +1,103 @@
-<form #formulaire="ngForm">
-    <div id="colonneGauche">
+<div id="corps">
+    <form #formulaire="ngForm">
+        <div id="colonneGauche">
+            <div>
+            <label for="sexe">sexe : </label>
+            <select required id="sexe" name="sexe" [(ngModel)]="inscrit.sexe" ngDefaultControl>
+                <option value="masculin">Homme</option>
+                <option value="feminin">Femme</option>
+            </select>
+        </div>    
+
+        <div>      
+            <label for="nom">Nom : </label>    
+            <input required type="text" id="nom" name="nom" [(ngModel)]="inscrit.nom" placeholder="nom" >
+        </div>    
+
         <div>
-        <label for="sexe">sexe : </label>
-        <select required id="sexe" name="sexe" [(ngModel)]="inscrit.sexe" ngDefaultControl>
-            <option value="masculin">Homme</option>
-            <option value="feminin">Femme</option>
-        </select>
-    </div>    
-    
-    <div>      
-        <label for="nom">Nom : </label>    
-        <input required type="text" id="nom" name="nom" [(ngModel)]="inscrit.nom" placeholder="nom" >
-    </div>    
-    
-    <div>
-        <label for="prenom">Prénom : </label>    
-        <input required type="text" id="prenom" name="prenom" [(ngModel)]="inscrit.prenom" placeholder="prenom" >
-    </div>    
-    
-    <div>
-        <label for="mail">E-mail : </label>    
-        <input email type="email" name="mail" id="mail" [(ngModel)]="inscrit.mail" placeholder="mail"  required>
-    </div>    
-    
-    <div>
-        <label for="tel">Téléphone : </label>    
-        <input patern =" /(\+\d+(\s|-))?0\d(\s|-)?(\d{2}(\s|-)?){4}/" type="tel" name="tel" id="tel" [(ngModel)]="inscrit.tel" placeholder="n° de telephone fixe" >
-    </div>    
-    
-    <div>
-        <label for="tel_portable">Portable : </label>    
-        <input type="tel" name="tel_portable" id="tel_portable" [(ngModel)]="inscrit.tel_portable" placeholder="n° de telephone portable" >
-    </div>    
-    </div>
-    
-    <div id="colonneDroite">
-        <div>         
-        <label for="nationalite">Nationalité : </label>    
-        <input required type="text" id="nationalite" name="nationalite" [(ngModel)]="inscrit.nationalite" placeholder="nationalite" >
-    </div>    
-    
-    <div>             
-        <label for="date_naissance">Date de naissance : </label>    
-        <input required type="date" id="date_naissance" name="date_naissance" [(ngModel)]="inscrit.date_naissance" placeholder="date de naissance">
-    </div>
-    
-    <div>
-       <label for="CP">Code postal : </label>    
-	   <input required type="text" id="CP" name="CP" [(ngModel)]="inscrit.CP" placeholder="code postal">
-    </div>    
-    
-    <div>        
-        <label for="mobilite">Etes-vous mobile ? </label>             
-        <select required  id="____" name ="mobile" [(ngModel)]="mobilite" ngDefaultControl>
-            <option value="oui">oui</option>
-            <option value="non">non</option>
-        </select>
-    </div>    
-    
-    <div>             
-        <label for="numero_pole_emploi">Numéro pôle emploi : </label>    
-        <input type="text"  id="numero_pole_emploi" name="numero_pole_emploi" [(ngModel)]="inscrit.numero_pole_emploi" placeholder="numero pole emploi" ngDefaultControl>
-    </div>    
-    
-    <div>             
-        <label for="parrainage">avez vous été parrainé ? : </label>    
-        <input type="text" id="parrainage" name="parrainage" [(ngModel)]="inscrit.parrainage" placeholder="adresse mail du parrain">
-    </div>    
+            <label for="prenom">Prénom : </label>    
+            <input required type="text" id="prenom" name="prenom" [(ngModel)]="inscrit.prenom" placeholder="prenom" >
+        </div>    
 
-    
-    <label for="mdp">Mot de passe : </label>    
-	<input required type="password" id="mdp" name="mdp" [(ngModel)]="inscrit.mdp" placeholder="mot de passe " >
-    
-    <label for="cmdp">Confirmer mot de passe : </label>    
-	<input required type="password"  id="cmdp" name="cmdp" [(ngModel)]="cmdp" placeholder="confirmer mot de passe " />
-    </div>
-    
-    <div id="zoneBoutons">
-        <button [disabled]="!formulaire.form.valid" type='submit' (click)="valider()">Valider</button>
-    </div>
-    
-    
-    
-</form>
+        <div>
+            <label for="mail">E-mail : </label>    
+            <input email type="email" name="mail" id="mail" [(ngModel)]="inscrit.mail" placeholder="mail"  required>
+        </div>    
 
-{{inscrit.sexe}}
-{{inscrit.nom}}
-{{inscrit.prenom}}
-{{inscrit.mail}}
-{{inscrit.nationalite}}
-{{inscrit.date_de_naissance}}
-{{inscrit.CP}}
-{{inscrit.mobilite}}
-{{inscrit.mdp}}
-{{inscrit.num_pole_emploi}}
-{{inscrit.mail_parrain}}
-{{inscrit.tel}}
-{{inscrit.tel_portable}}
-{{cmdp}}
-{{msgErreur}}
+        <div>
+            <label for="tel">Téléphone : </label>    
+            <input patern =" /(\+\d+(\s|-))?0\d(\s|-)?(\d{2}(\s|-)?){4}/" type="tel" name="tel" id="tel" [(ngModel)]="inscrit.tel" placeholder="n° de telephone fixe" >
+        </div>    
+
+        <div>
+            <label for="tel_portable">Portable : </label>    
+            <input type="tel" name="tel_portable" id="tel_portable" [(ngModel)]="inscrit.tel_portable" placeholder="n° de telephone portable" >
+        </div>    
+        </div>
+
+        <div id="colonneDroite">
+            <div>         
+            <label for="nationalite">Nationalité : </label>    
+            <input required type="text" id="nationalite" name="nationalite" [(ngModel)]="inscrit.nationalite" placeholder="nationalite" >
+        </div>    
+
+        <div>             
+            <label for="date_naissance">Date de naissance : </label>    
+            <input required type="date" id="date_naissance" name="date_naissance" [(ngModel)]="inscrit.date_naissance" placeholder="date de naissance">
+        </div>
+
+        <div>
+           <label for="CP">Code postal : </label>    
+           <input required type="text" id="CP" name="CP" [(ngModel)]="inscrit.CP" placeholder="code postal">
+        </div>    
+
+        <div>        
+            <label for="mobilite">Etes-vous mobile ? </label>             
+            <select required  id="____" name ="mobile" [(ngModel)]="mobilite" ngDefaultControl>
+                <option value="oui">oui</option>
+                <option value="non">non</option>
+            </select>
+        </div>    
+
+        <div>             
+            <label for="numero_pole_emploi">Numéro pôle emploi : </label>    
+            <input type="text"  id="numero_pole_emploi" name="numero_pole_emploi" [(ngModel)]="inscrit.numero_pole_emploi" placeholder="numero pole emploi" ngDefaultControl>
+        </div>    
+
+        <div>             
+            <label for="parrainage">avez vous été parrainé ? : </label>    
+            <input type="text" id="parrainage" name="parrainage" [(ngModel)]="inscrit.parrainage" placeholder="adresse mail du parrain">
+        </div>    
+
+
+        <label for="mdp">Mot de passe : </label>    
+        <input required type="password" id="mdp" name="mdp" [(ngModel)]="inscrit.mdp" placeholder="mot de passe " >
+
+        <label for="cmdp">Confirmer mot de passe : </label>    
+        <input required type="password"  id="cmdp" name="cmdp" [(ngModel)]="cmdp" placeholder="confirmer mot de passe " />
+        </div>
+
+        <div id="zoneBoutons">
+            <button [disabled]="!formulaire.form.valid" type='submit' (click)="valider()">Valider</button>
+        </div>
+
+
+
+    </form>
+
+    {{inscrit.sexe}}
+    {{inscrit.nom}}
+    {{inscrit.prenom}}
+    {{inscrit.mail}}
+    {{inscrit.nationalite}}
+    {{inscrit.date_de_naissance}}
+    {{inscrit.CP}}
+    {{inscrit.mobilite}}
+    {{inscrit.mdp}}
+    {{inscrit.num_pole_emploi}}
+    {{inscrit.mail_parrain}}
+    {{inscrit.tel}}
+    {{inscrit.tel_portable}}
+    {{cmdp}}
+    {{msgErreur}}
+</div>

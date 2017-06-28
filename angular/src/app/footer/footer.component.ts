@@ -1,8 +1,8 @@
-import { Component }    from '@angular/core';
-import { Inscrit }              from '../classe/Inscrit';
-import { InscritService }       from '../inscrit.service';
+import { Component } from '@angular/core';
+import { Inscrit } from '../classe/Inscrit';
+import { InscritService } from '../inscrit.service';
 
-	
+
 @Component({
   selector: 'footer-site',
   templateUrl: './footer.component.html',
@@ -10,12 +10,10 @@ import { InscritService }       from '../inscrit.service';
 })
 
 export class FooterComponent {
-	
+
 /********** Proprietes **********/
-    
-/********** Constructeur **********/ 
+
+/********** Constructeur **********/
 
 /********** Méthodes **********/
-    
-    
 }

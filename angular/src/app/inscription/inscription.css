@@ -18,3 +18,8 @@ input[required].ng-invalid{
     border-left: solid 5px red;
     
 }
+
+
+#corps {
+    background:transparent;
+}
