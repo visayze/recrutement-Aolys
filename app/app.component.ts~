@@ -1,0 +1,36 @@
+import { Component } from '@angular/core';
+
+	export class Inscrit {
+	nom:string;
+	prenom:string;
+
+};	
+
+	inscrit: Inscrit = {
+		nom: "",
+		prenom: "",	
+	};
+	
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+	titre='recrutement';
+	valeur:number = 0;
+	
+	
+	incrementerValeur(){
+		this.valeur++;
+	}
+	
+	resetValeur(){
+	this.valeur=0;		
+	}
+	
+	valider(nom, prenom){
+		
+		
+	}
+}

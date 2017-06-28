@@ -1,0 +1,43 @@
+<form #formulaire="ngForm">
+	<SELECT required name ="sexe" [(ngModel)]="inscrit.sexe" ngDefaultControl>
+		<option value="masculin">Homme</option>
+		<option value="feminin">Femme</option>
+	</SELECT><br>
+	<input required type="text" name="nom" [(ngModel)]="inscrit.nom" placeholder="nom" ><br>
+	<input required type="text" name="prenom" [(ngModel)]="inscrit.prenom" placeholder="prenom" ><br>
+	<input type="email" name="mail" [(ngModel)]="inscrit.mail" placeholder="mail" required><br>
+	<input type="tel" name="tel" [(ngModel)]="inscrit.tel" placeholder="n° de telephone fixe" ><br>
+	<input type="tel" name="tel_portable" [(ngModel)]="inscrit.tel_portable" placeholder="n° de telephone portable" ><br>
+	<input required type="text" name="nationalite" [(ngModel)]="inscrit.nationalite" placeholder="nationalite" ><br>
+	<input required type="date" name="date_naissance" [(ngModel)]="inscrit.date_naissance" placeholder="date de naissance"><br>
+	<input required type="text" name="CP" [(ngModel)]="inscrit.CP" placeholder="code postal"><br>
+	<p>êtes vous mobile ?</p>
+	<SELECT required name ="mobile" [(ngModel)]="mobilite" ngDefaultControl>
+	<option value="oui">oui</option>
+	<option value="non">non</option>
+	</SELECT><br>
+	<input type="text" name="numero_pole_emploi" [(ngModel)]="inscrit.numero_pole_emploi" placeholder="numero pole emploi" ngDefaultControl><br>	
+	<p>avez vous été parrainé ?</p><input type="text" name="parrainage" [(ngModel)]="inscrit.parrainage" placeholder="adresse mail du parrain"><br>
+	<input required type="password" name="mdp" [(ngModel)]="inscrit.mdp" placeholder="mot de passe " ><br>
+	<input required type="password" name="cmdp" [(ngModel)]="cmdp" placeholder="confirmer mot de passe " /><br>
+        <button [disabled]="!formulaire.form.valid" type='submit' (click)="valider()">Valider</button>
+</form>
+<button (click)="get()"></button><br><br>
+
+{{inscrit.sexe}}
+{{inscrit.nom}}
+{{inscrit.prenom}}
+{{inscrit.mail}}
+{{inscrit.nationalite}}
+{{inscrit.date_de_naissance}}
+{{inscrit.CP}}
+{{inscrit.mobilite}}
+{{inscrit.mdp}}
+{{inscrit.num_pole_emploi}}
+{{inscrit.mail_parrain}}
+{{inscrit.tel}}
+{{inscrit.tel_portable}}
+{{cmdp}}
+{{msgErreur}}
+
+{{inscrits|json}}
