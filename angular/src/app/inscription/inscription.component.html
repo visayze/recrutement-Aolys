@@ -11,7 +11,7 @@
 
         <div>      
             <label for="nom">Nom : </label>    
-            <input required type="text" id="nom" name="nom" [(ngModel)]="inscrit.nom" placeholder="nom" >
+            <input required type="text" id="nom" name="nom" [(ngModel)]="inscrit.nom"  placeholder="nom" >
         </div>    
 
         <div>
@@ -36,10 +36,20 @@
         </div>
 
         <div id="colonneDroite">
-            <div>         
+<!--            <div>         
             <label for="nationalite">Nationalité : </label>    
             <input required type="text" id="nationalite" name="nationalite" [(ngModel)]="inscrit.nationalite" placeholder="nationalite" >
-        </div>    
+        </div>  -->  
+            
+            <div class="form-group">
+        <label for="pays">nationalite</label>
+        <select class="form-control" id="pays"
+                required
+                [(ngModel)]="inscrit.nationalite" name="nationalite"
+                #Pays="ngModel">
+          <option *ngFor="let nationalite of pays" [value]="nationalite">{{nationalite}}</option>
+        </select>
+      </div>
 
         <div>             
             <label for="date_naissance">Date de naissance : </label>    
