@@ -4,25 +4,25 @@ import { InscritService } from '../inscrit.service';
 
 
 @Component({
-  selector: 'admin',
-  templateUrl: './adminConnection.component.html',
-  styleUrls: ['../site.css'],
+    selector: 'admin',
+    templateUrl: './adminConnection.component.html',
+    styleUrls: ['../site.css'],
 })
 
 export class AdminConnectionComponent {
-	
-/********** Proprietes **********/
+
+    /********** Proprietes **********/
     mail="";
     mdp="";
     test: string[] = [];
     msgErreur="";
-/********** Constructeur **********/ 
-	constructor(private inscritService: InscritService){}
-/********** Méthodes **********/
-    valider(){
+    /********** Constructeur **********/ 
+    constructor(private inscritService: InscritService) {}
+    /********** Méthodes **********/
+    valider() {
         this.inscritService.verif(this.mail, this.mdp)
-                .subscribe(
-                data  => (alert('connexion réussie')),
-                error =>  this.msgErreur = <any>error);
+            .subscribe(
+            data  => (alert('connexion réussie')),
+            error =>  this.msgErreur = <any>error);
     }
 }

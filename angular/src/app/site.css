@@ -1,6 +1,27 @@
-/******************************************************************************************/
+/*****************************************      index        *************************************************/
+#index{
+    background: white;
+}
+/*****************************************      corps       ***************************************************/
+#corps{
+    clear: both;
+    background:white;
+}
+/****************************************    header images     ***********************************************/
+#logo_left, #logo_right{
+    text-align: center;
+    display:inline-block;
+    width:600px;
+    margin:10px;
+    vertical-align:top;
+}
+/*****************************************      bouttons      *********************************************/
+#button{
+    text-align: center;
+    padding: 10px;
+}
+/************************************************************************************************************/
 
-/******************************************************************************************/
 #header {
 height: auto;
 position: relative;
@@ -142,13 +163,21 @@ top: 0;
 .style1 #navigation, .style3 #navigation, .style4 #navigation, .style5 #navigation, #header-controls-left, #header-controls-right, #header-wrap, .mobile-nav-controller-wrap, #left-header-mobile .header-cart-controls, .style6 #navigation-left-side, .style6 #navigation-right-side{
 line-height:60px;
 }
+#logo_fabrique{
+    /*float: right;*/
+    vertical-align:middle;
+    padding: 20px;
+    padding-right: 60px;
+    width: 240px;
+    height: 92px;
+}
 
 .style2 .logo {
- text-align: center;
+ /*text-align: center*/;
 }
 
 .style2 .logo a{
-display: inline-block;
+display: inline;
 vertical-align: middle;
 }
 
@@ -157,11 +186,12 @@ text-decoration: none;
 }
 
 .logo a, .logo a img {
-display: block;
+display: inline;
 }
 
 img.normal-logo {
 padding: 20px;
+padding-left: 60px;
 }
 
 img {

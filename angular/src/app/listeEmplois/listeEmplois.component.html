@@ -1,7 +1,13 @@
-<form #formulaire="ngForm" (ngSubmit)='valider()'>
-	<input type="text" name="rechercheEmploi" placeholder="Entrer votre recherche"><br/>
-    <button type='submit' >Rechercher</button>
-</form>
-<button type='button'>
-    <a routerLink="/index" routerLinkActive="active">Accueil</a>
-</button>
+<div id="corps">
+    <form #formulaire="ngForm" (ngSubmit)='valider()'>
+        <input type="text" name="rechercheEmploi" placeholder="Entrer votre recherche"><br/>
+        <div id="button">
+            <button type='submit' >Rechercher</button>
+        </div>
+    </form>
+    <div id="button">
+        <button type='button'>
+            <a routerLink="/index" routerLinkActive="active">Accueil</a>
+        </button>
+    </div>    
+</div>

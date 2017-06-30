@@ -40,7 +40,10 @@ button:disabled {
   color: #aaa;
   cursor: auto;
 }
-
+body{
+    background: #ffffff url(https://www.aolys.fr/wp-content/uploads/2017/05/main_bg_dark.jpg) center center;
+    margin: 0px !important;
+}
 /*
 .ng-pristine:not(form) {
     border-left: 5px solid #a94442;
