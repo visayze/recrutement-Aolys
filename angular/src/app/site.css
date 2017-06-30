@@ -2,6 +2,125 @@
 #index{
     background: white;
 }
+#zone_image1{
+    text-align: center;
+    position: relative;
+    color: white;
+    line-height: 24px;
+    background:url(https://i0.wp.com/www.aolys.fr/wp-content/uploads/2017/01/pepiniere-banner.jpg?fit=3103%2C1428&ssl=1);
+    font: 400 16px "Fira Sans","Open Sans","Arial",sans-serif;
+    padding-top: 90px;
+    padding-bottom: 50px;
+}
+#zone_image1 p{
+    text-align: left;
+    padding-top: 90px;
+    padding-left: 30px;
+}
+#zone_image1 h1{
+    font: 300 42px "Fira Sans","Open Sans","Arial",sans-serif;
+    line-height: 48px;
+    text-transform: uppercase;
+}
+#zone_texte1{
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font: 400 16px "Fira Sans","Open Sans","Arial",sans-serif;
+    color: #565656;
+    line-height: 24px;
+}
+#barre_rose{
+    background: #e50050;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: white;
+    font: 400 16px "Fira Sans","Open Sans","Arial",sans-serif;
+    font-size: 24px !important;
+}
+#zone_texte2{
+    font: 400 16px "Fira Sans","Open Sans","Arial",sans-serif;
+    color: #565656;
+    line-height: 24px;
+    text-align: center;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+#zone_texte2 h2 {
+    font: 700 32px "Fira Sans","Open Sans","Arial",sans-serif;
+    color: #39454d;
+    line-height: 39px;
+    letter-spacing: 0px;
+    text-transform: none;
+    margin-bottom: 20px;
+}
+#zone_texte2 p{
+    margin-bottom: 20px;
+}
+#zone_texte2, #partie_droite{
+    display:inline-block;
+    width:600px;
+    margin:10px;
+    vertical-align:top;
+}
+#partie_droite p{
+    margin-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    text-align: center;
+    color: white;
+    background: #565656;
+}
+#zone_image2 img{
+    background-size: cover;
+    background-position: center center;
+    width: 100%;
+    height: 100%;
+}
+#quote{
+    font-style: italic;
+    margin-top: 60px;
+    margin-bottom: 30px;
+    position: relative;
+    padding-left: 90px;
+    min-height: 60px;
+    font: 400 16px "Fira Sans","Open Sans","Arial",sans-serif;
+    color: #565656;
+    line-height: 24px;
+}
+#colonne1, #colonne2, #colonne3{
+    width: 300px;
+    display:inline-block;
+    margin:10px;
+    vertical-align:top;
+    text-align: left;
+    color: white;
+    padding: 10px;
+    font: 400 16px "Fira Sans","Open Sans","Arial",sans-serif;
+    line-height: 24px;
+}
+#colonne1, #colonne2{
+    border-right: 1px solid white; 
+}
+.colonnes{
+    text-align: center;
+    background: #e50050;
+}
+.bulle_cliquable{
+    text-align: center;
+    background: white;
+    color: #565656;
+    border-radius: 30px;
+    padding: 10px;
+    margin: 30px;
+}
+.titre{
+    padding-bottom: 20px;
+    text-align: center;
+}
 /*****************************************      corps       ***************************************************/
 #corps{
     clear: both;
