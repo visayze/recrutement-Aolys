@@ -1,6 +1,8 @@
-<h1>Connexion administrateurs</h1>
+<div id="corps">
+    <h1>Connexion administrateurs</h1>
     <form #formulaire="ngForm">
         <input required type="email" name="mail" [(ngModel)]="mail" placeholder="mail" required><br>
         <input required type="password" name="mdp" [(ngModel)]="mdp" placeholder="mot de passe " ><br>
-            <button [disabled]="!formulaire.form.valid" type='submit' (click)="valider()">Valider</button>
+        <button [disabled]="!formulaire.form.valid" type='submit' (click)="valider()">Valider</button>
     </form>
+</div>
